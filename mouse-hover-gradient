@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100vh;
+        background-color: black;
+        }
+
+        #hover-effect {
+        position: absolute;
+        width: 200px; /* Adjust the size of the gradient circle */
+        height: 200px;
+        background: radial-gradient(circle, rgba(0, 123, 255, 0.6), transparent 70%);
+        border-radius: 50%;
+        pointer-events: none; /* Ensures the element doesn’t interfere with the mouse events */
+        transform: translate(-50%, -50%); /* Center the effect at the cursor */
+        }
+    </style>
+</head>
+<body>
+    <div id="hover-effect"></div>
+    <script>
+        const hoverEffect = document.getElementById('hover-effect');
+
+        document.addEventListener('mousemove', (event) => {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        hoverEffect.style.left = `${mouseX}px`;
+        hoverEffect.style.top = `${mouseY}px`;
+        });
+    </script>
+</body>
+</html>
